@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="preferencias_app">
+    <PreferenceCategory
+        android:title="Filtro de búsquedas"
+        android:key="share_preferences">
+        <ListPreference
+            android:key="marca"
+            android:title="Marca preferida"
+            android:summary="Se filtrarán las búsquedas para esta marca"
+            android:entries="@array/marcas_array"
+            android:entryValues="@array/marca_array_values"
+            android:defaultValue="0"/>
+        <ListPreference
+            android:key="combustible"
+            android:entries="@array/combustible_array"
+            android:entryValues="@array/combustible_array_values"
+            android:defaultValue="0"
+            android:title="Combustible preferido"
+            android:summary="Se filtrarán las búsquedas para este combustible"/>
+    </PreferenceCategory>
+</PreferenceScreen>

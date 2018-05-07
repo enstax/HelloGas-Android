@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <TextView
+        android:id="@+id/tv_ultimoprecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="14.58"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="30dp" />
+    <TextView
+        android:id="@+id/tv_tiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/tv_ultimoprecio"
+        android:layout_alignRight="@+id/tv_ultimoprecio"
+        android:layout_below="@+id/tv_ultimoprecio"
+        android:text="Hace 4 hrs" />
+    <TextView
+        android:id="@+id/tv_nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_ultimoprecio"
+        android:layout_toRightOf="@id/tv_ultimoprecio"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorPrimary"
+        android:text="PEMEX"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+    <TextView
+        android:id="@+id/tv_distancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_nombre"
+        android:layout_alignBottom="@+id/tv_nombre"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="40 km"/>
+    <TextView
+        android:id="@+id/tv_direccion"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/tv_nombre"
+        android:layout_toRightOf="@id/tv_ultimoprecio"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Notification.Time.Media"
+        android:layout_alignBaseline="@id/tv_tiempo"
+        android:text="Reforma 666, Cuauhtémoc, CDMX"/>
+    <RatingBar
+        android:id="@+id/rating_lugar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_tiempo"
+        android:numStars="5"
+        android:rating="5"
+        android:theme="@style/RatingBar" />
+</RelativeLayout>

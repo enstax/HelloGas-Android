@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/toolbar"/>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal">
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/i_user"
+            android:layout_marginTop="60dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/eT_user"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                android:hint="@string/login_email"
+                android:drawableLeft="@drawable/ic_person">
+                <requestFocus/>
+            </EditText>
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/i_pass"
+            android:layout_below="@id/i_user"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/eT_password"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:drawableLeft="@drawable/ic_password"
+                android:textAppearance="@style/TextAppearance.AppCompat.Inverse"
+                android:hint="@string/password"/>
+        </android.support.design.widget.TextInputLayout>
+        <Button
+            android:id="@+id/b_login"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/i_pass"
+            android:background="@color/colorAccent"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="30dp"
+            android:text="@string/login"/>
+        <Button
+            android:id="@+id/b_flogin"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/b_login"
+            android:layout_marginTop="20dp"
+            android:background="@color/facebookColor"
+            android:textColor="@android:color/white"
+            android:text="@string/fb_login"/>
+
+        <TextView
+            android:id="@+id/tv_crearCuenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="57dp"
+            android:text="@string/signin"
+            android:textColor="@color/facebookColor"
+            android:textStyle="italic" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/ic_nav_search"
+        android:enabled="true"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/search"/>
+    <item
+        android:id="@+id/navigation_cercanos"
+        android:icon="@drawable/ic_nav_gasstation"
+        android:enabled="true"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/nearby" />
+    <item
+        android:id="@+id/navigation_favoritos"
+        android:icon="@drawable/ic_nav_favorite"
+        android:enabled="true"
+        app:showAsAction="ifRoom|withText"
+        android:title="@string/favorites"/>
+    <item
+        android:id="@+id/navigation_hellopoints"
+        android:icon="@drawable/ic_nav_star"
+        android:enabled="true"
+        android:title="@string/hgpoints"
+        app:showAsAction="ifRoom|withText"/>
+    <item
+        android:id="@+id/navigation_preferencias"
+        android:icon="@drawable/ic_nav_settings"
+        android:enabled="true"
+        android:title="@string/settings"
+        app:showAsAction="ifRoom|withText"/>
+</menu>

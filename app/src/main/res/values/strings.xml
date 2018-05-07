@@ -1,0 +1,77 @@
+<resources>
+    <string name="app_name">HelloGas</string>
+
+    <!-- MODULO LOGIN -->
+    <string name="login_email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="invalid_fields">Datos incorrectos</string>
+    <string name="login_succes">Inicio de sesión exitoso</string>
+    <string name="login_error">Error al iniciar sesión</string>
+    <string name="fb_login">Entrar con facebook</string>
+    <string name="fb_signin">Registrarme con facebook</string>
+
+    <string name="exit">Salir</string>
+    <string name="empty" />
+    <string name="signin_succes">Registro exitoso</string>
+    <string name="search">Buscar</string>
+    <string name="nearby">Cercanas</string>
+    <string name="favorites">Favoritos</string>
+    <string name="hgpoints">Hellopoints</string>
+    <string name="settings">Configurar</string>
+    <string name="bestprice">Mejor precio</string>
+    <string name="closer">Más cerca</string>
+    <string name="rating">Calificación</string>
+    <string name="withpromo">Con promoción</string>
+
+    <string name="cancel">Cancelar</string>
+    <string name="name">Nombre</string>
+    <string name="mprofile">Mi perfil</string>
+    <string name="report_prices">Reporta precios y gana puntos</string>
+    <string name="prices">Precios</string>
+    <string name="sevices">Servicios</string>
+    <string name="wc">WC</string>
+    <string name="shop">Tienda</string>
+    <string name="atm">ATM</string>
+    <string name="howtoget">Cómo llegar</string>
+    <string name="loading">Cargando...</string>
+    <string name="password2">Confirma contraseña</string>
+    <string name="signin">Crear una cuenta</string>
+    <string name="login">Entrar</string>
+    <string name="create">Crear</string>
+    <string name="signin_error">Error al registrarse</string>
+    <string name="aboutyourexp">Cuéntanos de tu experiencia</string>
+    <string name="send">Enviar</string>
+    <string name="comment">Comentario</string>
+    <string name="search_error">Error al cargar el mapa</string>
+    <string name="cargando">cargando...</string>
+    <string name="serviceis">¿Cómo fue el servicio?</string>
+    <string name="suspensivos">...</string>
+
+    <!-- TODO SUSTITUIR POR ARRAY DE BD -->
+    <!-- LISTA DE COMBUSTIBLES -->
+    <string-array name="combustible_array">
+        <item>Todos</item>
+        <item>Magna</item>
+        <item>Premium</item>
+        <item>Diesel</item>
+    </string-array>
+    <string-array name="combustible_array_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="marcas_array">
+        <item>Todas</item>
+        <item>PEMEX</item>
+        <item>Hidrosina</item>
+        <item>Shell</item>
+    </string-array>
+    <string-array name="marca_array_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+</resources>

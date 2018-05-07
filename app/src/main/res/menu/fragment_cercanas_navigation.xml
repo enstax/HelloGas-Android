@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/filtro_precio"
+        android:icon="@drawable/ic_money"
+        android:title="@string/bestprice" />
+    <item
+        android:id="@+id/filtro_mascerca"
+        android:icon="@drawable/ic_near_me"
+        android:title="@string/closer" />
+    <item
+        android:id="@+id/filtro_valoracion"
+        android:icon="@drawable/ic_star"
+        android:title="@string/rating" />
+    <item
+        android:id="@+id/filtro_promo"
+        android:icon="@drawable/ic_promo"
+        android:title="@string/withpromo" />
+</menu>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00867d</color>
+    <color name="colorPrimaryDark">#c7c7c7</color>
+    <color name="colorAccent">#54BBAB</color>
+
+    <!-- NAV COLOR ICONS -->
+    <color name="colorIcon">#FF000000</color>
+
+    <!-- TYPES -->
+    <color name="accept">#1faa00</color>
+
+    <!-- BUTTONS -->
+    <color name="facebookColor">#3b5998</color>
+</resources>
