@@ -63,7 +63,9 @@ public class CercanasPresenter implements CercanasContract.Presenter {
                     g.getDouble(5),
                     g.getString(6),
                     g.getFloat(3),
-                    g.getInt(7)
+                    g.getInt(7),
+                    g.getString(8),
+                    g.getString(9)
             );
             gasolineras.add(gas);
         }

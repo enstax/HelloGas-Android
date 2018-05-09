@@ -14,10 +14,12 @@ public class Gasolinera {
     private Double longitud;
     private int has_promo;
     private String fecha_actualizacion;
+    private String hora_actualizacion;
     private String nombre;
 
     // CONSTRUCTOR PARA MARCADORES EN MAPA
-    public Gasolinera(String id, String marca, String domicilio, Double latitud, Double longitud, String nombre, float valoracion, int promo) {
+    public Gasolinera(String id, String marca, String domicilio, Double latitud, Double longitud,
+                      String nombre, float valoracion, int promo, String fecha, String hora) {
         this.id = id;
         this.marca = marca;
         this.domicilio = domicilio;
@@ -27,6 +29,8 @@ public class Gasolinera {
         this.nombre = nombre;
         this.valoracion = valoracion;
         this.has_promo = promo;
+        this.fecha_actualizacion = fecha;
+        this.hora_actualizacion = hora;
     }
 
     // Constructor para lista de Gasolineras Cercanas
@@ -140,6 +144,14 @@ public class Gasolinera {
         this.nombre = nombre;
     }
 
+    public String getHora_actualizacion() {
+        return hora_actualizacion;
+    }
+
+    public void setHora_actualizacion(String hora_actualizacion) {
+        this.hora_actualizacion = hora_actualizacion;
+    }
+
     @Override
     public String toString() {
         return "Gasolinera{" +
@@ -147,9 +159,12 @@ public class Gasolinera {
                 ", marca='" + marca + '\'' +
                 ", domicilio='" + domicilio + '\'' +
                 ", valoracion=" + valoracion +
+                ", posicion=" + posicion +
                 ", latitud=" + latitud +
                 ", longitud=" + longitud +
                 ", has_promo=" + has_promo +
+                ", fecha_actualizacion='" + fecha_actualizacion + '\'' +
+                ", hora_actualizacion='" + hora_actualizacion + '\'' +
                 ", nombre='" + nombre + '\'' +
                 '}';
     }

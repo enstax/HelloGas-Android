@@ -17,6 +17,7 @@ public interface ModelBD {
         String HASPROMO = "promo";
         String LAST_PRICE = "ultimo_precio";
         String UPDATE = "fecha_act";
+        String TIME = "hora_act";
     }
     interface Favoritos {
         String TABLE_NAME = "favoritos";

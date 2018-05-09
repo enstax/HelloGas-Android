@@ -81,7 +81,7 @@ public class ListGasolineras extends BaseAdapter {
         }
         */
         tv_distancia.setText("8 Km");
-        tv_ultimaAct.setText("hoy");
+        tv_ultimaAct.setText(gasolinera.getFecha_actualizacion() + " " +  gasolinera.getHora_actualizacion());
         rb_rating.setRating(gasolinera.getValoracion());
 
         return row_view;

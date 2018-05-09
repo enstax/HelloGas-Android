@@ -7,6 +7,7 @@ import android.database.DatabaseUtils;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+import android.view.Display;
 
 import com.enstax.cesarcano.hellogas.domain.model.Gasolinera;
 
@@ -65,7 +66,7 @@ public class GasolinerasTableTransaction {
     public Cursor getGasolinerasByPrecio() {
         SQLiteDatabase db = adminSQLite.getReadableDatabase();
         // TODO Por ultimo precio actualizado
-        String query = String.format("SELECT %S, %S, %S, %S, %S, %S, %S, %S  FROM %S;",
+        String query = String.format("SELECT %S, %S, %S, %S, %S, %S, %S, %S, %S, %S  FROM %S;",
                 ModelBD.Gasolineras.ID,
                 ModelBD.Gasolineras.MARCA,
                 ModelBD.Gasolineras.DIRECCION,
@@ -74,6 +75,8 @@ public class GasolinerasTableTransaction {
                 ModelBD.Gasolineras.LONGITUD,
                 ModelBD.Gasolineras.NOMBRE,
                 ModelBD.Gasolineras.HASPROMO,
+                ModelBD.Gasolineras.UPDATE,
+                ModelBD.Gasolineras.TIME,
                 ModelBD.Gasolineras.TABLE_NAME);
         Cursor c = db.rawQuery(query, null);
         if (c != null) {
@@ -96,6 +99,8 @@ public class GasolinerasTableTransaction {
             values.put(ModelBD.Gasolineras.NOMBRE, gasolinera.getNombre());
             values.put(ModelBD.Gasolineras.VALORACION, gasolinera.getValoracion());
             values.put(ModelBD.Gasolineras.HASPROMO, gasolinera.getHas_promo());
+            values.put(ModelBD.Gasolineras.UPDATE, gasolinera.getFecha_actualizacion());
+            values.put(ModelBD.Gasolineras.TIME, gasolinera.getHora_actualizacion());
 
             db.insert(ModelBD.Gasolineras.TABLE_NAME, null, values);
             Log.d(TAG, "createGasolinera: succesful");

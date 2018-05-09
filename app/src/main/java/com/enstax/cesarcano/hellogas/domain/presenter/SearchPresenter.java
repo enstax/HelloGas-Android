@@ -61,15 +61,20 @@ public class SearchPresenter implements SearchContract.Presenter, WebTask.Presen
             JSONArray jsonArray = jsonObject.getJSONArray("response");
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject place = jsonArray.getJSONObject(i);
+                JSONObject actualizacion = place.getJSONObject("actualizacion");
                 Double latitud = place.getDouble("latitud");
                 Double longitud = place.getDouble("longitud");
                 String id = place.getString("id");
                 String domicilio = place.getString("direccion");
                 String marca = place.getString("marca");
                 String nombre = place.getString("nombre");
+                String fecha = actualizacion.getString("fecha");
+                String hora = actualizacion.getString("hora");
                 int promo = place.getInt("promocion");
                 float valoracion = Float.parseFloat(place.getString("calificacion"));
-                Gasolinera gasolinera = new Gasolinera(id, marca, domicilio, latitud, longitud, nombre, valoracion, promo);
+                Log.v(" GASOLINERA :D", actualizacion.toString());
+                Gasolinera gasolinera = new Gasolinera(id, marca, domicilio, latitud,
+                        longitud, nombre, valoracion, promo, fecha, hora);
 
                 gasolineras.add(gasolinera);
             }
