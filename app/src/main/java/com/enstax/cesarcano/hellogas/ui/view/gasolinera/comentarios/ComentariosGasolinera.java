@@ -3,6 +3,7 @@ package com.enstax.cesarcano.hellogas.ui.view.gasolinera.comentarios;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,6 +83,23 @@ public class ComentariosGasolinera extends TabFragment implements  ComentGasCont
 
     @Override
     public void loadMComent(Comentario comentario) {
+        Log.d("VIEW COMENTARIO", comentario.toString());
+        tv_user.setText(comentario.getUsuario());
+        tv_fecha.setText(comentario.getFecha_creacion());
+        tv_comentario.setText(comentario.getComentario());
+        tv_dislikes.setText(Integer.toString(comentario.getDislikes()));
+        tv_likes.setText(Integer.toString(comentario.getLikes()));
+        ratingBar.setRating(comentario.getCalificacion());
+        if ( comentario.getLikes() > 0) {
+            iv_thhumb_up.setImageDrawable(ic_like_green);
+        } else {
+            iv_thhumb_up.setImageDrawable(ic_like_gray);
+        }
+        if ( comentario.getDislikes() > 0) {
+            iv_thumb_down.setImageDrawable(ic_dislike_red);
+        } else {
+            iv_thumb_down.setImageDrawable(ic_dislike_gray);
+        }
         hideProgressDialog();
     }
 

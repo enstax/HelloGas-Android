@@ -15,7 +15,7 @@ public interface Coment {
     }
 
     interface Get{
-        void getAll();
+        void getAll(String gid);
     }
 
     interface Update {

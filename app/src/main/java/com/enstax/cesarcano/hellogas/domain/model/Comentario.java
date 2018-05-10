@@ -25,7 +25,19 @@ public class Comentario {
         this.comentario = comentario;
     }
 
-
+    // Constructor para lista comentarios en detalle de Gasolinera
+    public Comentario(String idC, String gid, String uNombre, String uid, float calificacion,
+                      int dislikes, int likes, String fecha, String texto) {
+        this.id = idC;
+        this.item_id = gid;
+        this.usuario = uNombre;
+        this.user_id = uid;
+        this.calificacion = calificacion;
+        this.likes = likes;
+        this.dislikes = dislikes;
+        this.fecha_creacion = fecha;
+        this.comentario = texto;
+    }
 
     public String getId() {
         return id;
@@ -97,5 +109,20 @@ public class Comentario {
 
     public void setUser_id(String user_id) {
         this.user_id = user_id;
+    }
+
+    @Override
+    public String toString() {
+        return "Comentario{" +
+                "id='" + id + '\'' +
+                ", usuario='" + usuario + '\'' +
+                ", calificacion=" + calificacion +
+                ", comentario='" + comentario + '\'' +
+                ", fecha_creacion='" + fecha_creacion + '\'' +
+                ", likes=" + likes +
+                ", dislikes=" + dislikes +
+                ", item_id='" + item_id + '\'' +
+                ", user_id='" + user_id + '\'' +
+                '}';
     }
 }

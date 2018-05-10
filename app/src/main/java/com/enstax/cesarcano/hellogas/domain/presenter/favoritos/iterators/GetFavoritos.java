@@ -46,7 +46,6 @@ public class GetFavoritos implements Favoritos.Get, WebTask.Presenter {
         ArrayList<Gasolinera> gasolineras = new ArrayList<Gasolinera>();
         try {
             JSONArray jsonArray = jsonObject.getJSONArray("response");
-            Log.d("GET FAVORITOS", "response: " + jsonArray.toString());
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject place = jsonArray.getJSONObject(i);
                 Double latitud = place.getDouble("lat");

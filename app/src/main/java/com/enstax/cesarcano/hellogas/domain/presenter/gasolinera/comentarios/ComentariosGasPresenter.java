@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.enstax.cesarcano.hellogas.domain.model.Comentario;
 import com.enstax.cesarcano.hellogas.domain.presenter.gasolinera.comentarios.iterator.Coment;
+import com.enstax.cesarcano.hellogas.domain.presenter.gasolinera.comentarios.iterator.GetAllComent;
 import com.enstax.cesarcano.hellogas.ui.view.gasolinera.comentarios.ComentGasContract;
 import com.enstax.cesarcano.hellogas.ui.view.gasolinera.comentarios.ComentariosGasolinera;
 
@@ -17,6 +18,7 @@ public class ComentariosGasPresenter implements ComentGasContract.Presenter, Com
 
     private Context context;
     private ComentGasContract.View view;
+    private Coment.Get getComent;
 
     public ComentariosGasPresenter(Context context, ComentariosGasolinera view) {
         this.context = context;
@@ -35,7 +37,9 @@ public class ComentariosGasPresenter implements ComentGasContract.Presenter, Com
 
     @Override
     public void getComentarios(String gid) {
-
+        view.loading();
+        getComent = new GetAllComent(this, context);
+        getComent.getAll(gid);
     }
 
     @Override
@@ -60,12 +64,12 @@ public class ComentariosGasPresenter implements ComentGasContract.Presenter, Com
 
     @Override
     public void loadComentarios(ArrayList<Comentario> comentarios) {
-
+        view.loadList(comentarios);
     }
 
     @Override
     public void updateMComent(Comentario comentario) {
-
+        view.loadMComent(comentario);
     }
 
     @Override
