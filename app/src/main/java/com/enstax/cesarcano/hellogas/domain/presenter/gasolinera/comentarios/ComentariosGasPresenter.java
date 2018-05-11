@@ -37,7 +37,6 @@ public class ComentariosGasPresenter implements ComentGasContract.Presenter, Com
 
     @Override
     public void getComentarios(String gid) {
-        view.loading();
         getComent = new GetAllComent(this, context);
         getComent.getAll(gid);
     }
