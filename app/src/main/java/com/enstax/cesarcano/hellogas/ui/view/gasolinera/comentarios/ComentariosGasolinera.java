@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.enstax.cesarcano.hellogas.R;
@@ -43,6 +44,8 @@ public class ComentariosGasolinera extends TabFragment implements  ComentGasCont
     @BindView(R.id.tv_like_count) TextView tv_likes;
     @BindView(R.id.tv_dislike_count) TextView tv_dislikes;
     @BindView(R.id.list_comentarios) ListView  listView;
+    @BindView(R.id.coment_cont)
+    RelativeLayout mComment_Container;
 
     // Images
     @BindDrawable(R.drawable.ic_thumb_up_green) Drawable ic_like_green;
@@ -57,6 +60,7 @@ public class ComentariosGasolinera extends TabFragment implements  ComentGasCont
         ButterKnife.bind(this, view);
         presenter = new ComentariosGasPresenter(getContext(), this);
         presenter.getComentarios(idgasolinera);
+        ocultarComentario();
         return view;
     }
 
@@ -83,24 +87,25 @@ public class ComentariosGasolinera extends TabFragment implements  ComentGasCont
 
     @Override
     public void loadMComent(Comentario comentario) {
-        Log.d("VIEW COMENTARIO", comentario.toString());
-        tv_user.setText(comentario.getUsuario());
-        tv_fecha.setText(comentario.getFecha_creacion());
-        tv_comentario.setText(comentario.getComentario());
-        tv_dislikes.setText(Integer.toString(comentario.getDislikes()));
-        tv_likes.setText(Integer.toString(comentario.getLikes()));
-        ratingBar.setRating(comentario.getCalificacion());
-        if ( comentario.getLikes() > 0) {
-            iv_thhumb_up.setImageDrawable(ic_like_green);
-        } else {
-            iv_thhumb_up.setImageDrawable(ic_like_gray);
-        }
-        if ( comentario.getDislikes() > 0) {
-            iv_thumb_down.setImageDrawable(ic_dislike_red);
-        } else {
-            iv_thumb_down.setImageDrawable(ic_dislike_gray);
-        }
-        hideProgressDialog();
+            Log.d("VIEW COMENTARIO", comentario.toString());
+            tv_user.setText(comentario.getUsuario());
+            tv_fecha.setText(comentario.getFecha_creacion());
+            tv_comentario.setText(comentario.getComentario());
+            tv_dislikes.setText(Integer.toString(comentario.getDislikes()));
+            tv_likes.setText(Integer.toString(comentario.getLikes()));
+            ratingBar.setRating(comentario.getCalificacion());
+            if (comentario.getLikes() > 0) {
+                iv_thhumb_up.setImageDrawable(ic_like_green);
+            } else {
+                iv_thhumb_up.setImageDrawable(ic_like_gray);
+            }
+            if (comentario.getDislikes() > 0) {
+                iv_thumb_down.setImageDrawable(ic_dislike_red);
+            } else {
+                iv_thumb_down.setImageDrawable(ic_dislike_gray);
+            }
+            mostrarComentario();
+            hideProgressDialog();
     }
 
     @Override
@@ -116,5 +121,13 @@ public class ComentariosGasolinera extends TabFragment implements  ComentGasCont
     @Override
     public void loadComent(Comentario comentario) {
 
+    }
+
+    private void mostrarComentario() {
+        mComment_Container.setVisibility(View.VISIBLE);
+    }
+
+    private void ocultarComentario() {
+        mComment_Container.setVisibility(View.GONE);
     }
 }

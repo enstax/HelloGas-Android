@@ -84,8 +84,8 @@ public class ListComentarios extends BaseAdapter {
         tv_comentario.setText(comentario.getComentario());
         tv_user.setText(comentario.getUsuario());
         tv_fecha.setText(comentario.getFecha_creacion());
-        tv_dislikes.setText(comentario.getDislikes());
-        tv_likes.setText(comentario.getLikes());
+        tv_dislikes.setText(Integer.toString(comentario.getDislikes()));
+        tv_likes.setText(Integer.toString(comentario.getLikes()));
         ratingBar.setRating(comentario.getCalificacion());
         if ( comentario.getLikes() > 0) {
             iv_thhumb_up.setImageDrawable(ic_like_green);

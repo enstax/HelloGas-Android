@@ -46,31 +46,33 @@ public class GetAllComent implements WebTask.Presenter, Coment.Get {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         try {
             JSONArray jsonArray = jsonObject.getJSONArray("response");
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject place = jsonArray.getJSONObject(i);
-                float calificacion = Float.parseFloat(place.getString("calificacion"));
-                int dislikes = place.getInt("dislikes");
-                int likes = place.getInt("likes");
-                String texto = place.getString("texto");
-                String fecha = place.getString("fecha");
-                String uid = place.getString("uid");
-                String uNombre = place.getString("user");
-                String gid = place.getString("gid");
-                String idC = place.getString("id");
+            if (jsonArray.length() > 0 ) {
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject place = jsonArray.getJSONObject(i);
+                    float calificacion = Float.parseFloat(place.getString("calificacion"));
+                    int dislikes = place.getInt("dislikes");
+                    int likes = place.getInt("likes");
+                    String texto = place.getString("texto");
+                    String fecha = place.getString("fecha");
+                    String uid = place.getString("uid");
+                    String uNombre = place.getString("user");
+                    String gid = place.getString("gid");
+                    String idC = place.getString("id");
 
-                if (texto.equals("0")) {
-                    texto = "";
+                    if (texto.equals("0")) {
+                        texto = "";
+                    }
+
+                    Comentario  comentario = new Comentario(idC, gid, uNombre, uid, calificacion, dislikes, likes, fecha, texto);
+
+                    if(uid.equals(user.getUid())) {
+                        iterator.updateMComent(comentario);
+                    } else {
+                        comentarios.add(comentario);
+                    }
                 }
-
-                Comentario  comentario = new Comentario(idC, gid, uNombre, uid, calificacion, dislikes, likes, fecha, texto);
-
-                if(uid.equals(user.getUid())) {
-                    iterator.updateMComent(comentario);
-                } else {
-                    comentarios.add(comentario);
-                }
+                iterator.loadComentarios(comentarios);
             }
-            iterator.loadComentarios(comentarios);
         } catch (JSONException e) {
             e.printStackTrace();
         }
