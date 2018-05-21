@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:text="10 km"/>
+                android:text="- - - -"/>
         </LinearLayout>
         <TextView
             android:id="@+id/tv_direccion"
@@ -131,6 +131,7 @@
                 android:textColor="@android:color/white"
                 android:background="@color/accept"
                 android:text="@string/report_prices"/>
+            <include layout="@layout/item_combustible"/>
             <TableRow
                 android:id="@+id/title_servicios"
                 android:layout_width="match_parent"

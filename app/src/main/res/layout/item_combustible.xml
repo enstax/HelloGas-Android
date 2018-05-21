@@ -8,22 +8,71 @@
         android:layout_height="40dp"
         android:padding="5dp">
         <TextView
-            android:id="@+id/tv_combustible"
+            android:id="@+id/tv_regular"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:gravity="center"
             android:textColor="@android:color/white"
+            android:background="@color/magna"
             android:textStyle="bold"
-            android:text="MAGNA"/>
+            android:text="@string/gas_regular"/>
         <TextView
-            android:id="@+id/tv_precio_combustible"
+            android:id="@+id/tv_precio_regular"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="3"
             android:textStyle="bold"
             android:textSize="20sp"
-            android:text="MXN 16.99"/>
+            android:text="MXN 0.0"/>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/tv_premium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="@color/premium"
+            android:textStyle="bold"
+            android:text="@string/gas_premium"/>
+        <TextView
+            android:id="@+id/tv_precio_premium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="MXN 0.0"/>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/tv_diesel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="@color/diesel"
+            android:textStyle="bold"
+            android:text="@string/gas_diesel"/>
+        <TextView
+            android:id="@+id/tv_precio_diesel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="3"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="MXN 0.0"/>
     </TableRow>
 </LinearLayout>

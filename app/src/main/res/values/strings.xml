@@ -46,6 +46,9 @@
     <string name="cargando">cargando...</string>
     <string name="serviceis">¿Cómo fue el servicio?</string>
     <string name="suspensivos">...</string>
+    <string name="gas_regular">REGULAR</string>
+    <string name="gas_premium">PREMIUM</string>
+    <string name="gas_diesel">DIESEL</string>
 
     <!-- TODO SUSTITUIR POR ARRAY DE BD -->
     <!-- LISTA DE COMBUSTIBLES -->
