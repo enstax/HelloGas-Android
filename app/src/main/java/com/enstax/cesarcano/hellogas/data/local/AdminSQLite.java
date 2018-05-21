@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class AdminSQLite extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "hellogas";
-    private static final int DATABASE_VERSION = 5;
+    private static final int DATABASE_VERSION = 6;
 
     public AdminSQLite(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -23,15 +23,14 @@ public class AdminSQLite extends SQLiteOpenHelper {
                         "%S TEXT NULL, " +
                         "%S TEXT NULL, " +
                         "%S TEXT NULL, " +
-                        "%S TEXT NULL, " +
                         "%S REAL NULL, " +
                         "%S REAL NULL, " +
                         "%S REAL NULL, " +
                         "%S INT NULL, " +
                         "%S REAL NULL, " +
                         "%S TEXT NULL," +
-                        "%S TEXT NULL );",
-                ModelBD.Gasolineras.TABLE_NAME, ModelBD.Gasolineras.ID,  ModelBD.Gasolineras.NOMBRE,
+                        "%S TEXT NULL);",
+                ModelBD.Gasolineras.TABLE_NAME, ModelBD.Gasolineras.ID,
                 ModelBD.Gasolineras.MARCA, ModelBD.Gasolineras.DIRECCION, ModelBD.Gasolineras.VALORACION,
                 ModelBD.Gasolineras.LATITUD, ModelBD.Gasolineras.LONGITUD, ModelBD.Gasolineras.HASPROMO,
                 ModelBD.Gasolineras.LAST_PRICE, ModelBD.Gasolineras.UPDATE, ModelBD.Gasolineras.TIME)

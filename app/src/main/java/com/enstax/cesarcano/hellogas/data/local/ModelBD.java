@@ -8,7 +8,6 @@ public interface ModelBD {
     interface Gasolineras {
         String TABLE_NAME = "gasolineras";
         String ID = "id";
-        String NOMBRE = "nombre";
         String MARCA = "marca";
         String DIRECCION = "direccion";
         String VALORACION = "valoracion";
@@ -18,6 +17,9 @@ public interface ModelBD {
         String LAST_PRICE = "ultimo_precio";
         String UPDATE = "fecha_act";
         String TIME = "hora_act";
+        String REGULAR = "gas_regular";
+        String PREMIUM = "gas_premium";
+        String DIESEL = "gas_diesel";
     }
     interface Favoritos {
         String TABLE_NAME = "favoritos";

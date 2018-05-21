@@ -15,18 +15,19 @@ public class Gasolinera {
     private int has_promo;
     private String fecha_actualizacion;
     private String hora_actualizacion;
-    private String nombre;
+    private Double gasRegular;
+    private Double gasPremium;
+    private Double gasDiesel;
 
     // CONSTRUCTOR PARA MARCADORES EN MAPA
-    public Gasolinera(String id, String marca, String domicilio, Double latitud, Double longitud,
-                      String nombre, float valoracion, int promo, String fecha, String hora) {
+    public Gasolinera(String id, String marca, String domicilio, Double latitud,
+                      Double longitud, float valoracion, int promo, String fecha, String hora) {
         this.id = id;
         this.marca = marca;
         this.domicilio = domicilio;
         this.latitud = latitud;
         this.longitud = longitud;
         this.posicion = new Geopunto(latitud, longitud);
-        this.nombre = nombre;
         this.valoracion = valoracion;
         this.has_promo = promo;
         this.fecha_actualizacion = fecha;
@@ -34,13 +35,16 @@ public class Gasolinera {
     }
 
     // Constructor para lista de Gasolineras Cercanas
-    public Gasolinera(String id, String marca, String domicilio, float valoracion, Geopunto posicion, int has_promo) {
+    public Gasolinera(String id, String marca, String domicilio, float valoracion,
+                      Double lat, Double lng, int has_promo, String fecha, String hora) {
         this.id = id;
         this.marca = marca;
         this.domicilio = domicilio;
         this.valoracion = valoracion;
-        this.posicion = posicion;
+        this.posicion = new Geopunto(lat, lng);
         this.has_promo = has_promo;
+        this.fecha_actualizacion = fecha;
+        this.hora_actualizacion = hora;
     }
 
     // Constructor para favoritos
@@ -54,14 +58,19 @@ public class Gasolinera {
     }
 
     // COSTRUCTOR DE DETALLE
-    public Gasolinera(String id, String marca, String domicilio, float valoracion, Double latitud, Double longitud, String nombre) {
+    public Gasolinera(String id, String marca, String domicilio, float valoracion,
+                      Double latitud, Double longitud,Double gasRegular,
+                      Double gasPremium, Double gasDiesel
+                      ) {
         this.id = id;
         this.marca = marca;
         this.domicilio = domicilio;
         this.valoracion = valoracion;
         this.latitud = latitud;
         this.longitud = longitud;
-        this.nombre = nombre;
+        this.gasDiesel = gasDiesel;
+        this.gasPremium = gasPremium;
+        this.gasRegular = gasRegular;
     }
 
     public String getId() {
@@ -136,20 +145,36 @@ public class Gasolinera {
         this.longitud = longitud;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public String getHora_actualizacion() {
         return hora_actualizacion;
     }
 
     public void setHora_actualizacion(String hora_actualizacion) {
         this.hora_actualizacion = hora_actualizacion;
+    }
+
+    public Double getGasRegular() {
+        return gasRegular;
+    }
+
+    public void setGasRegular(Double gasRegular) {
+        this.gasRegular = gasRegular;
+    }
+
+    public Double getGasPremium() {
+        return gasPremium;
+    }
+
+    public void setGasPremium(Double gasPremium) {
+        this.gasPremium = gasPremium;
+    }
+
+    public Double getGasDiesel() {
+        return gasDiesel;
+    }
+
+    public void setGasDiesel(Double gasDiesel) {
+        this.gasDiesel = gasDiesel;
     }
 
     @Override
@@ -165,7 +190,6 @@ public class Gasolinera {
                 ", has_promo=" + has_promo +
                 ", fecha_actualizacion='" + fecha_actualizacion + '\'' +
                 ", hora_actualizacion='" + hora_actualizacion + '\'' +
-                ", nombre='" + nombre + '\'' +
                 '}';
     }
 }

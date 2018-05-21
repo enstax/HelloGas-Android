@@ -34,12 +34,11 @@ public class GetDetalleGas implements WebTask.Presenter, com.enstax.cesarcano.he
             Double longitud = place.getDouble("longitud");
             String id = place.getString("id");
             String domicilio = place.getString("direccion");
-            String marca = place.getString("marca");
-            String nombre = place.getString("nombre");
+            String marca = place.getString("nombre");
             float calificacion = Float.valueOf(place.getString("calificacion"));
             com.enstax.cesarcano.hellogas.domain.model
                     .Gasolinera gasolinera = new com.enstax.cesarcano.hellogas.domain.model.
-                    Gasolinera(id, marca, domicilio, calificacion, latitud, longitud, nombre);
+                    Gasolinera(id, marca, domicilio, calificacion, latitud, longitud, 0.0, 0.0, 0.0);
             presenter.load(gasolinera);
         } catch (JSONException e) {
             e.printStackTrace();

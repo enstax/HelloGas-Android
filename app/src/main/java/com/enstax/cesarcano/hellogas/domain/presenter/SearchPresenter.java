@@ -66,15 +66,15 @@ public class SearchPresenter implements SearchContract.Presenter, WebTask.Presen
                 Double longitud = place.getDouble("longitud");
                 String id = place.getString("id");
                 String domicilio = place.getString("direccion");
-                String marca = place.getString("marca");
-                String nombre = place.getString("nombre");
+                String marca = place.getString("nombre");
                 String fecha = actualizacion.getString("fecha");
-                String hora = actualizacion.getString("hora");
+                String usuario = actualizacion.getString("usuario");
+
                 int promo = place.getInt("promocion");
                 float valoracion = Float.parseFloat(place.getString("calificacion"));
                 Log.v(" GASOLINERA :D", actualizacion.toString());
                 Gasolinera gasolinera = new Gasolinera(id, marca, domicilio, latitud,
-                        longitud, nombre, valoracion, promo, fecha, hora);
+                        longitud, valoracion, promo, fecha, usuario);
 
                 gasolineras.add(gasolinera);
             }
