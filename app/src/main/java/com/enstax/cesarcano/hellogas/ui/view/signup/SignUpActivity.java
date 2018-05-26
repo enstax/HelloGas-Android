@@ -24,18 +24,12 @@ import butterknife.OnClick;
 public class SignUpActivity extends BaseActivity implements SignUpContract.View {
 
     private static final String TAG = "REGISTRO DE USUARIO";
-    @BindView(R.id.eT_nombre)
-    EditText et_nombre;
-    @BindView(R.id.eT_email)
-    EditText et_correo;
-    @BindView(R.id.eT_password)
-    EditText et_password1;
-    @BindView(R.id.eT_password2)
-    EditText et_password2;
-    @BindView(R.id.b_cancelar)
-    Button b_cancelReg;
-    @BindView(R.id.b_crearCuenta)
-    Button b_registrar;
+    @BindView(R.id.eT_nombre) EditText et_nombre;
+    @BindView(R.id.eT_email) EditText et_correo;
+    @BindView(R.id.eT_password) EditText et_password1;
+    @BindView(R.id.eT_password2) EditText et_password2;
+    @BindView(R.id.b_cancelar) Button b_cancelReg;
+    @BindView(R.id.b_crearCuenta) Button b_registrar;
 
     @BindString(R.string.signin_succes) String signinSuccess;
     @BindString(R.string.signin_error) String signinError;
