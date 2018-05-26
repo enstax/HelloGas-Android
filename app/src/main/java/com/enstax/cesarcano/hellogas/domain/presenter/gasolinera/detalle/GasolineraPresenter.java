@@ -5,6 +5,7 @@ import android.content.Context;
 import com.enstax.cesarcano.hellogas.domain.model.Gasolinera;
 import com.enstax.cesarcano.hellogas.domain.presenter.favoritos.iterators.Favoritos;
 import com.enstax.cesarcano.hellogas.domain.presenter.gasolinera.detalle.iterator.GetDetalleGas;
+import com.enstax.cesarcano.hellogas.domain.presenter.gasolinera.detalle.iterator.GetPrecios;
 import com.enstax.cesarcano.hellogas.domain.presenter.gasolinera.detalle.iterator.SetFavorito;
 import com.enstax.cesarcano.hellogas.ui.view.gasolinera.detalle.DetalleGasContract;
 import com.enstax.cesarcano.hellogas.ui.view.gasolinera.detalle.DetalleGasolinera;
@@ -20,6 +21,7 @@ public class GasolineraPresenter implements DetalleGasContract.Presenter,
     private Context context;
     private com.enstax.cesarcano.hellogas.domain.presenter.gasolinera.detalle.iterator.Gasolinera.Get get;
     private com.enstax.cesarcano.hellogas.domain.presenter.gasolinera.detalle.iterator.Gasolinera.SetFavorito setFavorito;
+    private com.enstax.cesarcano.hellogas.domain.presenter.gasolinera.detalle.iterator.Gasolinera.GetPrecios getPrecios;
 
     public GasolineraPresenter(DetalleGasolinera view, Context context) {
         this.view = view;
@@ -52,6 +54,12 @@ public class GasolineraPresenter implements DetalleGasContract.Presenter,
     }
 
     @Override
+    public void getPrecios(String gid) {
+        getPrecios = new GetPrecios(view.getContext(), this);
+        getPrecios.getPrecios(gid);
+    }
+
+    @Override
     public void load(Gasolinera gasolinera) {
 
         view.loadInfo(gasolinera);
@@ -60,6 +68,11 @@ public class GasolineraPresenter implements DetalleGasContract.Presenter,
     @Override
     public void favorite(Boolean b) {
         view.heart(b);
+    }
+
+    @Override
+    public void loadPrecios(Double r, Double p, Double d) {
+        view.setPrecios(r, p, d);
     }
 
     @Override

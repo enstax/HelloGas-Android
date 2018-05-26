@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -65,6 +66,10 @@ public class DetalleGasolinera extends TabFragment implements DetalleGasContract
     @BindView(R.id.iv_comollegar) LinearLayout iv_como;
     @BindView(R.id.mapView) MapView mapView;
     @BindView(R.id.ratign_content) LinearLayout rating_content;
+    @BindView(R.id.tv_precio_regular) TextView tv_gasRegular;
+    @BindView(R.id.tv_precio_premium) TextView  tv_gasPremium;
+    @BindView(R.id.tv_precio_diesel) TextView tv_gasDiesel ;
+    @BindView(R.id.b_reportar) Button b_reportar;
 
     private final float DEFAULT_ZOOM = (float) 14.5;
 
@@ -83,6 +88,7 @@ public class DetalleGasolinera extends TabFragment implements DetalleGasContract
         presenter = new GasolineraPresenter(this, getContext());
         presenter.attachView(this);
         presenter.getInfo(idgasolinera);
+        presenter.getPrecios(idgasolinera);
 
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
@@ -127,6 +133,12 @@ public class DetalleGasolinera extends TabFragment implements DetalleGasContract
         startActivity(intent);
     }
 
+    @OnClick(R.id.b_reportar)
+    public void reportar() {
+        showProgressDialog();
+        // Se inicia la tarea
+    }
+
     @OnClick(R.id.iv_favorite)
     public void favorite() {
         presenter.setFavorite(idgasolinera);
@@ -158,6 +170,13 @@ public class DetalleGasolinera extends TabFragment implements DetalleGasContract
             iv_FavoriteGas.setImageDrawable(no_favorito);
         }
         hideProgressDialog();
+    }
+
+    @Override
+    public void setPrecios(Double regular, Double premium, Double diesel) {
+        tv_gasRegular.setText("MXN " + Double.toString(regular));
+        tv_gasPremium.setText("MXN " + Double.toString(premium));
+        tv_gasDiesel.setText("MXN " + Double.toString(diesel));
     }
 
     private void cargarMapa(final Double lat, final Double lng) {

@@ -12,10 +12,12 @@ public interface DetalleGasContract {
     interface View extends BaseView{
         void loadInfo(Gasolinera gasolinera);
         void heart(Boolean b);
+        void setPrecios(Double regular, Double premium, Double diesel);
     }
 
     interface Presenter extends BasePresenter<DetalleGasContract.View>{
         void getInfo(String id);
         void setFavorite(String gid);
+        void getPrecios(String gid);
     }
 }

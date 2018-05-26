@@ -16,6 +16,11 @@ public interface Gasolinera {
     interface Iterator {
         void load(com.enstax.cesarcano.hellogas.domain.model.Gasolinera gasolinera);
         void favorite(Boolean b);
+        void loadPrecios(Double r, Double p, Double d);
+    }
+
+    interface GetPrecios {
+        void getPrecios(String gid);
     }
 
 }
