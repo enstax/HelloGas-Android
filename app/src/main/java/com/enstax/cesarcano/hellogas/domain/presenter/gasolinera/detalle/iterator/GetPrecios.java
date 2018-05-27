@@ -12,7 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Created by cesar on 21/05/18.
+ * Created by cesarcanojmz@gmail.com
  */
 
 public class GetPrecios implements Gasolinera.GetPrecios, WebTask.Presenter {

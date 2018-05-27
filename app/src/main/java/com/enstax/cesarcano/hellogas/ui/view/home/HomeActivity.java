@@ -18,7 +18,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 import com.enstax.cesarcano.hellogas.R;
-import com.enstax.cesarcano.hellogas.domain.presenter.HomePresenter;
 import com.enstax.cesarcano.hellogas.ui.view.cercanas.CercanasFragment;
 import com.enstax.cesarcano.hellogas.ui.view.configuracion.ConfiguracionesFragment;
 import com.enstax.cesarcano.hellogas.ui.view.favoritos.FavoritosFragment;
@@ -26,15 +25,13 @@ import com.enstax.cesarcano.hellogas.ui.helper.BottomNavigationViewHelper;
 import com.enstax.cesarcano.hellogas.ui.helper.base.BaseActivity;
 import com.enstax.cesarcano.hellogas.ui.view.search.SearchFragment;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 /**
  * Created by cesarcanojmz@gmail.com
  */
 
-public class HomeActivity extends BaseActivity implements HomeContract.View{
+public class HomeActivity extends BaseActivity {
 
-    private HomeContract.Presenter presenter;
     private FirebaseAuth auth ;
 
     private final int PERMISO_UBICACION = 0;
@@ -90,29 +87,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.View{
         navigation.setSelectedItemId(R.id.navigation_search);
 
         auth = FirebaseAuth.getInstance() ;
-
-        presenter = new HomePresenter(auth, this);
-        presenter.attachView(this);
-        presenter.getCurrentUser();
         init();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        presenter.onStart();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        presenter.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        presenter.detachView();
     }
 
     public void init() {
@@ -232,30 +207,5 @@ public class HomeActivity extends BaseActivity implements HomeContract.View{
     protected void onRestart() {
         super.onRestart();
         init();
-    }
-
-    @Override
-    public Context getContext() {
-        return this;
-    }
-
-    @Override
-    public void loading() {
-
-    }
-
-    @Override
-    public void error() {
-
-    }
-
-    @Override
-    public void setEnabled(boolean isEnabled) {
-
-    }
-
-    @Override
-    public void setUser(FirebaseUser user) {
-
     }
 }
