@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.enstax.cesarcano.hellogas.PreciosActivity;
 import com.enstax.cesarcano.hellogas.domain.model.Gasolinera;
 import com.enstax.cesarcano.hellogas.domain.presenter.gasolinera.detalle.GasolineraPresenter;
 import com.enstax.cesarcano.hellogas.ui.helper.base.TabFragment;
@@ -135,8 +136,8 @@ public class DetalleGasolinera extends TabFragment implements DetalleGasContract
 
     @OnClick(R.id.b_reportar)
     public void reportar() {
-        showProgressDialog();
-        // Se inicia la tarea
+        // Se inicia la actividad para reportar los precios
+        Util.setIntent(getContext(), PreciosActivity.class);
     }
 
     @OnClick(R.id.iv_favorite)

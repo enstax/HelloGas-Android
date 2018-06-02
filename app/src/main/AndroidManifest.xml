@@ -15,34 +15,41 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:theme="@style/SplashTheme"
-            android:name=".ui.view.SplashActivity">
+            android:name=".ui.view.SplashActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-        <activity android:name=".ui.view.home.HomeActivity"
-        android:label="@string/empty" />
-        <activity android:name=".ui.view.login.LoginActivity"
-            android:label="@string/empty"  />
-        <activity android:name=".ui.view.gasolinera.GasolineraActivity"
+        <activity
+            android:name=".ui.view.home.HomeActivity"
+            android:label="@string/empty" />
+        <activity
+            android:name=".ui.view.login.LoginActivity"
+            android:label="@string/empty" />
+        <activity
+            android:name=".ui.view.gasolinera.GasolineraActivity"
             android:label="@string/empty">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.view.home.HomeActivity" />
         </activity>
-        <activity android:name=".ui.view.signup.SignUpActivity"
-            android:label="@string/empty"  />
-        <activity android:name=".ui.view.coment.ComentarioActivity"
+        <activity
+            android:name=".ui.view.signup.SignUpActivity"
+            android:label="@string/empty" />
+        <activity
+            android:name=".ui.view.coment.ComentarioActivity"
             android:label="Comentario"
-            android:theme="@style/Base.Theme.AppCompat.Light.Dialog.Alert"/>
+            android:theme="@style/Base.Theme.AppCompat.Light.Dialog.Alert" />
+        <activity android:name=".PreciosActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light.Dialog.Alert"
+            android:label="@string/empty"/>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
     </application>
+
 </manifest>
