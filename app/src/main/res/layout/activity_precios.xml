@@ -1,9 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context="com.enstax.cesarcano.hellogas.PreciosActivity">
-
-</android.support.constraint.ConstraintLayout>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/tv_regular"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="@color/magna"
+            android:textStyle="bold"
+            android:text="@string/gas_regular"/>
+        <EditText
+            android:id="@+id/eT_gasRegular"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:inputType="numberDecimal|number"
+            android:enabled="false"
+            android:hint="MXN 0"/>
+        <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="6"
+            android:src="@drawable/ic_edit_"/>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/tv_premium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="@color/premium"
+            android:textStyle="bold"
+            android:text="@string/gas_premium"/>
+        <EditText
+            android:id="@+id/eT_gasPremium"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:inputType="numberDecimal|number"
+            android:enabled="false"
+            android:hint="MXN 0"/>
+        <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="6"
+            android:src="@drawable/ic_edit_"/>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="5dp">
+        <TextView
+            android:id="@+id/tv_diesel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:background="@color/diesel"
+            android:textStyle="bold"
+            android:text="@string/gas_diesel"/>
+        <EditText
+            android:id="@+id/eT_gasDiesel"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:inputType="numberDecimal|number"
+            android:enabled="false"
+            android:hint="MXN 0"/>
+        <ImageView
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="6"
+            android:src="@drawable/ic_edit_"/>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:padding="5dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/cancel"/>
+        <Button
+            android:id="@+id/b_aceptar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/send"/>
+    </TableRow>
+</LinearLayout>
