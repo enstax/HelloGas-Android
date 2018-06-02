@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public interface Coment {
     interface SetLike {
         void setLike(String comentId);
-        void setDisLike(String comentId);
     }
 
     interface Get{
@@ -25,7 +24,6 @@ public interface Coment {
     interface Iterator{
         void updateLike(Boolean b);
         void loadComentarios(ArrayList<Comentario> comentarios);
-        void updateMComent(Comentario comentario);
         void updateComent(Comentario comentario);
     }
 }

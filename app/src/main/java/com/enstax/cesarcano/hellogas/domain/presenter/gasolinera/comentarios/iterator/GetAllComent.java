@@ -66,7 +66,7 @@ public class GetAllComent implements WebTask.Presenter, Coment.Get {
                     Comentario  comentario = new Comentario(idC, gid, uNombre, uid, calificacion, dislikes, likes, fecha, texto);
 
                     if(uid.equals(user.getUid())) {
-                        iterator.updateMComent(comentario);
+                        iterator.updateComent(comentario);
                     } else {
                         comentarios.add(comentario);
                     }

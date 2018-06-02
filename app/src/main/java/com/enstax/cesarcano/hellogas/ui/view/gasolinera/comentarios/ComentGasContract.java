@@ -15,8 +15,6 @@ public interface ComentGasContract {
     interface View extends BaseView {
         void loadList(ArrayList<Comentario> comentarios);
         void loadMComent(Comentario comentario);
-        void likeComent(Boolean b);
-        void updateComent(String id);
         void loadComent(Comentario comentario);
     }
 
@@ -24,6 +22,5 @@ public interface ComentGasContract {
         void getComentarios(String gid);
         void likeIt(String gid);
         void coment(String id);
-        void mComent(String uid);
     }
 }

@@ -19,9 +19,4 @@ public class Like implements WebTask.Presenter, Coment.SetLike {
     public void setLike(String comentId) {
 
     }
-
-    @Override
-    public void setDisLike(String comentId) {
-
-    }
 }

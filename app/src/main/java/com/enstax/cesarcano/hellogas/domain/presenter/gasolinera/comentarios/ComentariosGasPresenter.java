@@ -52,11 +52,6 @@ public class ComentariosGasPresenter implements ComentGasContract.Presenter, Com
     }
 
     @Override
-    public void mComent(String uid) {
-
-    }
-
-    @Override
     public void updateLike(Boolean b) {
 
     }
@@ -67,12 +62,7 @@ public class ComentariosGasPresenter implements ComentGasContract.Presenter, Com
     }
 
     @Override
-    public void updateMComent(Comentario comentario) {
-        view.loadMComent(comentario);
-    }
-
-    @Override
     public void updateComent(Comentario comentario) {
-
+        view.loadMComent(comentario);
     }
 }

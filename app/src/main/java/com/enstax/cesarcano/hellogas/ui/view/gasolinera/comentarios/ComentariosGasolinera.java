@@ -43,7 +43,7 @@ public class ComentariosGasolinera extends TabFragment implements  ComentGasCont
     @BindView(R.id.b_thumb_down) ImageView iv_thumb_down;
     @BindView(R.id.tv_like_count) TextView tv_likes;
     @BindView(R.id.tv_dislike_count) TextView tv_dislikes;
-    @BindView(R.id.list_comentarios) ListView  listView;
+    @BindView(R.id.list_comentarios) ListView  list View;
     @BindView(R.id.coment_cont)
     RelativeLayout mComment_Container;
 
@@ -58,9 +58,6 @@ public class ComentariosGasolinera extends TabFragment implements  ComentGasCont
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.tab_gasolinera_comentarios, container, false);
         ButterKnife.bind(this, view);
-        presenter = new ComentariosGasPresenter(getContext(), this);
-        presenter.getComentarios(idgasolinera);
-        ocultarComentario();
         return view;
     }
 
@@ -104,30 +101,12 @@ public class ComentariosGasolinera extends TabFragment implements  ComentGasCont
             } else {
                 iv_thumb_down.setImageDrawable(ic_dislike_gray);
             }
-            mostrarComentario();
             hideProgressDialog();
     }
 
     @Override
-    public void likeComent(Boolean b) {
-        showProgressDialog();
-    }
-
-    @Override
-    public void updateComent(String id) {
-
-    }
-
-    @Override
     public void loadComent(Comentario comentario) {
-
+        hideProgressDialog();
     }
 
-    private void mostrarComentario() {
-        mComment_Container.setVisibility(View.VISIBLE);
-    }
-
-    private void ocultarComentario() {
-        mComment_Container.setVisibility(View.GONE);
-    }
 }
