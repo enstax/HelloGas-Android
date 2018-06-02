@@ -43,7 +43,7 @@ public class ComentariosGasolinera extends TabFragment implements  ComentGasCont
     @BindView(R.id.b_thumb_down) ImageView iv_thumb_down;
     @BindView(R.id.tv_like_count) TextView tv_likes;
     @BindView(R.id.tv_dislike_count) TextView tv_dislikes;
-    @BindView(R.id.list_comentarios) ListView  list View;
+    @BindView(R.id.list_comentarios) ListView  listView;
     @BindView(R.id.coment_cont)
     RelativeLayout mComment_Container;
 
