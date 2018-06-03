@@ -16,8 +16,8 @@
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:gravity="center"
-            android:textColor="@android:color/white"
-            android:background="@color/magna"
+            android:textColor="@color/magna"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:text="@string/gas_regular"/>
         <EditText
@@ -28,8 +28,9 @@
             android:gravity="center"
             android:inputType="numberDecimal|number"
             android:enabled="false"
-            android:hint="MXN 0"/>
+            android:hint="@string/mxn"/>
         <ImageView
+            android:id="@+id/iV_edit_regular"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:layout_weight="6"
@@ -45,8 +46,8 @@
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:gravity="center"
-            android:textColor="@android:color/white"
-            android:background="@color/premium"
+            android:textColor="@color/premium"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:text="@string/gas_premium"/>
         <EditText
@@ -57,8 +58,9 @@
             android:gravity="center"
             android:inputType="numberDecimal|number"
             android:enabled="false"
-            android:hint="MXN 0"/>
+            android:hint="@string/mxn"/>
         <ImageView
+            android:id="@+id/iV_edit_premium"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:layout_weight="6"
@@ -74,8 +76,8 @@
             android:layout_height="match_parent"
             android:layout_weight="4"
             android:gravity="center"
-            android:textColor="@android:color/white"
-            android:background="@color/diesel"
+            android:textColor="@color/diesel"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:text="@string/gas_diesel"/>
         <EditText
@@ -86,24 +88,26 @@
             android:gravity="center"
             android:inputType="numberDecimal|number"
             android:enabled="false"
-            android:hint="MXN 0"/>
+            android:hint="@string/mxn"/>
         <ImageView
+            android:id="@+id/iV_edit_diesel"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:layout_weight="6"
             android:src="@drawable/ic_edit_"/>
     </TableRow>
     <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
+        android:layout_width ="match_parent"
         android:padding="5dp">
         <Button
+            android:id="@+id/b_cancelar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/cancel"/>
         <Button
-            android:id="@+id/b_aceptar"
+            android:id="@+id/b_enviar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

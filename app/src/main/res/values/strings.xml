@@ -49,6 +49,7 @@
     <string name="gas_regular">REGULAR</string>
     <string name="gas_premium">PREMIUM</string>
     <string name="gas_diesel">DIESEL</string>
+    <string name="mxn">MXN</string>
 
     <!-- TODO SUSTITUIR POR ARRAY DE BD -->
     <!-- LISTA DE COMBUSTIBLES -->
