@@ -14,7 +14,9 @@ public class Gasolinera {
     public Gasolinera() {
     }
 
-    public Gasolinera(String marca, String direccion, Double latitud, Double longitud) {
+    // USADO PARA LISTA DE CERCANOS
+    public Gasolinera(String id, String marca, String direccion, Double latitud, Double longitud) {
+        this.id = id;
         this.marca = marca;
         this.direccion = direccion;
         this.latitud = latitud;

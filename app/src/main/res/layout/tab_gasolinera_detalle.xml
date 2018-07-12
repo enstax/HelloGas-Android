@@ -3,92 +3,106 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp">
+
         <TextView
             android:id="@+id/tv_marca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:text="Gasolinera"
             android:textColor="@color/colorAccent"
-            android:textSize="35sp"
-            android:text="@string/cargando" />
+            android:textSize="35sp" />
+
         <ImageView
             android:id="@+id/iv_favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/tv_direccion"
-            android:layout_marginBottom="6dp"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_favorite_null"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="6dp"
+            android:src="@drawable/ic_favorite_null" />
+
         <LinearLayout
+            android:id="@+id/direccion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_marca"
-            android:orientation="vertical"
-            android:id="@+id/direccion">
+            android:orientation="vertical">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_location"/>
+                android:src="@drawable/ic_location" />
+
             <TextView
                 android:id="@+id/tv_distancia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:text="- - - -"/>
+                android:text="# km"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
         </LinearLayout>
+
         <TextView
             android:id="@+id/tv_direccion"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_toRightOf="@id/direccion"
             android:layout_below="@id/tv_marca"
             android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/direccion"
             android:gravity="center_vertical"
-            android:text="@string/cargando"/>
+            android:text="DIRECCION (FIREBASE)" />
+
         <FrameLayout
+            android:id="@+id/map"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_below="@id/direccion"
-            android:id="@+id/map">
+            android:layout_below="@id/direccion">
+
             <com.google.android.gms.maps.MapView
                 android:id="@+id/mapView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
             <LinearLayout
                 android:id="@+id/iv_comollegar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_gravity="right|bottom"
                 android:gravity="center"
-                android:padding="10dp"
-                android:layout_gravity="right|bottom">
+                android:orientation="vertical"
+                android:padding="10dp">
+
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:contentDescription="logo camara"
-                    app:srcCompat="@drawable/ic_direction"/>
+                    app:srcCompat="@drawable/ic_direction" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorPrimary"
-                    android:text="@string/howtoget"/>
+                    android:text="@string/howtoget"
+                    android:textColor="@color/colorPrimary" />
             </LinearLayout>
         </FrameLayout>
+
         <TextView
             android:id="@+id/tv_calificacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/map"
-            android:textColor="@android:color/holo_orange_dark"
             android:layout_marginTop="5dp"
-            android:textSize="30sp"
-            android:text="@string/suspensivos"/>
+            android:text="3.5"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="30sp" />
+
         <LinearLayout
             android:id="@+id/ratign_content"
             android:layout_width="wrap_content"
@@ -96,112 +110,130 @@
             android:layout_below="@id/map"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/tv_calificacion">
+
             <RatingBar
                 android:id="@+id/rating_lugar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="false"
                 android:numStars="5"
                 android:rating="3.4"
-                android:clickable="false"
                 android:theme="@style/RatingBar" />
         </LinearLayout>
+
         <TableLayout
             android:id="@+id/table_productos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_below="@id/tv_calificacion">
+            android:layout_below="@id/tv_calificacion"
+            android:layout_marginTop="20dp">
+
             <TableRow
                 android:id="@+id/title_precios"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
-                android:background="#f4f6f9">
+                android:background="#f4f6f9"
+                android:padding="2dp">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textSize="20sp"
-                    android:text="@string/prices"/>
+                    android:text="@string/prices"
+                    android:textSize="20sp" />
             </TableRow>
+
             <Button
                 android:id="@+id/b_reportar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:textColor="@android:color/white"
                 android:background="@color/accept"
-                android:text="@string/report_prices"/>
-            <include layout="@layout/item_combustible"/>
+                android:text="@string/report_prices"
+                android:textColor="@android:color/white" />
+
+            <include layout="@layout/item_combustible" />
+
             <TableRow
                 android:id="@+id/title_servicios"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/b_reportar"
-                android:background="#f4f6f9"
                 android:layout_marginTop="20dp"
+                android:background="#f4f6f9"
                 android:padding="2dp">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textSize="20sp"
-                    android:text="@string/sevices"/>
+                    android:text="@string/sevices"
+                    android:textSize="20sp" />
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <LinearLayout
                     android:id="@+id/ll_wc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:layout_weight="1"
                     android:padding="20dp">
+
                     <ImageView
                         android:id="@+id/iv_wc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/ic_wc"/>
+                        app:srcCompat="@drawable/ic_wc" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/wc"/>
+                        android:text="@string/wc" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/ll_shop"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:layout_weight="1"
                     android:padding="20dp">
+
                     <ImageView
                         android:id="@+id/iv_shop"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/ic_shop"/>
+                        app:srcCompat="@drawable/ic_shop" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/shop"/>
+                        android:text="@string/shop" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/ll_atm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:layout_weight="1"
                     android:padding="20dp">
+
                     <ImageView
                         android:id="@+id/iv_atm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/ic_atm"/>
+                        app:srcCompat="@drawable/ic_atm" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/atm"/>
+                        android:text="@string/atm" />
                 </LinearLayout>
             </TableRow>
         </TableLayout>

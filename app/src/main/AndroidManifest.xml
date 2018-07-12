@@ -43,7 +43,7 @@
             android:name=".ui.view.coment.ComentarioActivity"
             android:label="Comentario"
             android:theme="@style/Base.Theme.AppCompat.Light.Dialog.Alert" />
-        <activity android:name=".PreciosActivity"
+        <activity android:name=".ui.view.precios.PreciosActivity"
             android:theme="@style/Base.Theme.AppCompat.Light.Dialog.Alert"
             android:label="@string/empty"/>
 

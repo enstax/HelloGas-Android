@@ -18,7 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.enstax.cesarcano.hellogas.PreciosActivity;
+import com.enstax.cesarcano.hellogas.ui.view.precios.PreciosActivity;
 import com.enstax.cesarcano.hellogas.domain.model.Gasolinera;
 import com.enstax.cesarcano.hellogas.domain.presenter.gasolinera.detalle.GasolineraPresenter;
 import com.enstax.cesarcano.hellogas.ui.helper.base.TabFragment;
